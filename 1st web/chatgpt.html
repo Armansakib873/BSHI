@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Professional Laboratory Service Website">
+    <meta name="keywords" content="Laboratory, Services, Health, Science">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Services</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #0e639c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+
+        header h1 {
+            display: inline;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        /* Navigation Menu */
+        nav {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #087ab2;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #065b8a;
+        }
+
+        /* Main Content Section */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #0e639c;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #0e639c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="logo.png" alt="Laboratory Logo">
+        <h1>Laboratory Services</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="fade-in">
+            <h2>Welcome to Our Laboratory</h2>
+            <p>Providing top-notch laboratory services with cutting-edge technology and highly skilled professionals.</p>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="fade-in">
+            <h2>About Us</h2>
+            <p>We are a state-of-the-art laboratory committed to delivering accurate and timely results. Our team of experts ensures that every test is conducted with the utmost precision.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="fade-in">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of laboratory services, including blood tests, pathology, microbiology, and more. Trust us for reliable and efficient service every time.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <h2>Contact Us</h2>
+            <p>Have any questions? Feel free to reach out to us at (123) 456-7890 or email us at info@labservices.com.</p>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Laboratory Services. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Animation -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.fade-in');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            sections.forEach(section => {
+                if (section.offsetTop < scrollPosition - 50) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

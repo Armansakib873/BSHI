@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* This sets the background color to dark black */
+    margin: 0;
+    padding: 0;
+}
+        header {
+            background-color: #061d07;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            background-color: #1d0404;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color:#0a1316;
+            color: rgb(255, 255, 255);
+        }
+        .container {
+            padding: 20px;
+        }
+        .button {
+            background-color: #02364c;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: auto;
+        }
+        .button:hover {
+            background-color: #033e1aec;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid rgb(170, 156, 156);
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Store Inventory Management Softwere</h1>
+</header>
+
+<nav>
+    <a style="background-color:#0a1316;" href="./storeinventory.html">Dashboard</a>
+    <a href="./productsetup.html">Product Setup</a>
+    <a href="./stock1.html">Stock</a>
+    <a href="./purchase1.html">Purchase</a>
+    <a href="./sale1.html">Sale</a>
+</nav>
+
+<div class="container" id="stock">
+    <h2>Stock</h2>
+    <button class="button">Add Stock</button>
+    <button class="button">Delete Stock</button>
+
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Value</th>
+        </tr>
+        <!-- Rows will be added dynamically -->
+    </table>
+</div>
+
+</body>
+</html>
