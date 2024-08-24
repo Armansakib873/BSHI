@@ -56,6 +56,8 @@ header {
 
     background-color: #ffffff; /* Darker background for rows */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 90%; /* Use percentage for width */
+    margin: 10px auto; /* Center the header horizontally with auto margins */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -65,10 +67,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 1rem 5%; /* Relative padding */
     transition: all 0.3s ease;
-    border-radius: 200px;
+    border-radius: 50px; /* Reduced radius to fit more screen sizes */
     border-bottom: 1px solid #4c4b4b;
+    
 }
 h1{
     font-weight: bold;
