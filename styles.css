@@ -56,9 +56,6 @@ header {
 
     background-color: #ffffff; /* Darker background for rows */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    width: 1450px;
-    margin-left: 30px;
-    margin-top: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
