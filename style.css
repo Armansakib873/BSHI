@@ -1,5 +1,5 @@
 /* Container for logo and heading */
-.header {
+ /* .header {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -9,18 +9,98 @@
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    position: fixed;
+} */
+
+/* header {
+    
+
+    background-color: #ffffff; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 1450px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    transition: all 0.3s ease;
+    border-radius: 200px;
+    border-bottom: 1px solid #4c4b4b;
+}
+ */
+
+
+
+
+ /* Container for logo and heading */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjusts logo and heading spacing */
+    background-color: #ffffff; /* Clean white background */
+    padding: 15px 20px; /* Increased padding for better spacing */
+    margin-top: 0; /* Remove margin to avoid space at the top */
+    margin-right: 5%;
+    width: 95%; /* Full width to adjust with browser size */
+    max-width: 95%; /* Ensure it doesn’t exceed the browser width */
+    border-radius: 10px; /* Softer rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for better effect */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for shadow and color */
+    position: fixed; /* Stays fixed at the top */
+    top: 0; /* Fix it to the top of the page */
+    left: 0; /* Ensure it aligns with the left edge of the browser */
+    z-index: 1000; /* High z-index to overlay other elements */
 }
 
-body {
-    margin: 30px;
+/* Logo Styling */
+.header img {
+    height: 40px; /* Adjust logo height to maintain aspect ratio */
+    width: auto; /* Auto width to maintain logo aspect ratio */
 }
+
+/* Heading Styling */
+.header h1 {
+    font-size: 1.5rem; /* Responsive font size */
+    color: #333333; /* Darker text for better readability */
+    margin: 0; /* Remove default margin */
+    padding-left: 0px; /* Space between logo and heading */
+    flex-grow: 1; /* Ensures the heading takes available space */
+    text-align: left; /* Align heading to the left */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack logo and heading on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .header h1 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding-left: 0; /* Remove padding on smaller screens */
+        margin-top: 10px; /* Add space between logo and heading */
+    }
+
+    .header img {
+        height: 40px;
+        width: 40px; /* Smaller logo for smaller screens */
+    }
+}
+
 
 
 
 /* Logo Styling */
 .header img {
     width: 40px;
-    max-height: 80px;
+    max-height: 40px;
     margin-right: 20px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -127,6 +207,9 @@ div h2 {
     color: #333;
 }
 
+/* 1st-line */
+
+
 
 /* table section */
 
@@ -218,3 +301,18 @@ div h2 {
     text-align: left;
     width: 100%;
 }
+
+
+
+
+
+
+
+
+/* sound hover  */
+document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
+    row.addEventListener('mouseenter', function() {
+        document.getElementById('hoverSound').play();
+    });
+});
+
