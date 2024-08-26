@@ -12,20 +12,25 @@
 <body>
     <audio id="hoverSound" src="hv3.mp3" preload="auto"></audio>
     <div class="header">
-        <img src="sishulogo.png" alt="LOGO">
-        <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+        <!-- Make the logo and heading clickable, linking to the "About" section -->
+        <a href="#about" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
+            <h1 style="margin-left: 10px; color: #333;">বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+        </a>
 
         <nav>
             <ul>
-                <li><a href="#home">আমাদের সম্পর্কে</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
                 <li><a href="#services">আমাদের সেবাসমুহ</a></li>
-                <li><a href="#about">হেলথ টেকনোলজি</a></li>
+                <li><a href="#health-tech">হেলথ টেকনোলজি</a></li>
                 <li><a href="#contact">যোগাযোগ</a></li>
             </ul>
         </nav>
     </div>
+
+<section id="about">
     <div>
-        <h2>আমাদের সম্পর্কে</h2>
+        <h2 style="margin-top: 100px;">আমাদের সম্পর্কে</h2>
         <h2 style="font-size: 15px;">ইতিহাস</h2>
     </div>
     <div>
@@ -36,7 +41,8 @@
     </div>
 
     <div></div>
-
+</section>
+<section id="services">
     <div>
         <h2>আমাদের সেবাসমুহ</h2>
         <h2 style="font-size: 20px;">Undergraduate & Diploma Courses of BICH</h2>
@@ -72,7 +78,8 @@
     </div>
 
     <div></div>
-
+</section>
+    <section id="health-tech">
     <div>
         <h2>হেলথ টেকনোলজি</h2>
         <h2 style="font-size: 20px;">Bach 14</h2>
@@ -210,6 +217,7 @@
             </tr>
         </tbody>
     </table>
+</section>
 
 
 </div>
