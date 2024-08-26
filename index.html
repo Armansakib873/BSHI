@@ -12,12 +12,15 @@
 <body>
     <audio id="hoverSound" src="hv3.mp3" preload="auto"></audio>
     <div class="header">
-        <!-- Make the logo and heading clickable, linking to the "About" section -->
-        <a href="#about" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
-            <h1 style="margin-left: 0px; color: #333;">বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
-        </a>
-
+<!-- Make the logo and heading separate clickable links, both linking to the "About" section -->
+<div style="display: flex; align-items: center;">
+  <a href="#about" style="text-decoration: none;">
+    <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
+  </a>
+  <a href="#about" style="text-decoration: none; margin-left: 10px;">
+    <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+  </a>
+</div>
         <nav>
             <ul>
                 <li><a href="#about">আমাদের সম্পর্কে</a></li>
@@ -261,6 +264,36 @@
 
 
 </div>
+
+<!-- Contact Info Section -->
+    <footer>
+        <div class="contact-info">
+            <h2>Contact Info</h2>
+            <p><strong>Dhaka Shishu (Children) Hospital</strong></p>
+            <p>Sher-e-Bangla Nagar, Dhaka-1207, Bangladesh</p>
+            <p>Phone: 880-2-9128308</p>
+            <p>(PABX): 9104211 - 9104220, 9117512</p>
+            <p>Email: <a href="mailto:dhakashishu2010@gmail.com">dhakashishu2010@gmail.com</a></p>
+            <p>Website: <a href="http://www.dhakashishuhospital.org">www.dhakashishuhospital.org</a></p>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="contact-us">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Footer Developer Info -->
+        <div class="footer-info">
+            <p>Dhaka Shishu Hospital all rights reserved © 2015 | developed & maintained by <a href="#">Go Up</a></p>
+        </div>
+    </footer>
 
 <script>
     const hoverSound = document.getElementById('hoverSound');
