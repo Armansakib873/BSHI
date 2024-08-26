@@ -276,6 +276,22 @@ table{
   ;padding-right: 40px}
 
 
+
+
+#bach14-header {
+  cursor: pointer;
+  user-select: none;
+  color: blue;
+}
+
+#bach14-header:hover {
+  text-decoration: underline;
+}
+
+#bach14-content {
+  display: none;
+}
+
 /*footer*/
 
 
@@ -283,7 +299,7 @@ footer {
     background-color: #222;
     padding: 20px;
     text-align: center;
-    width:115%
+    width:112%
 }
 
 .contact-info, .contact-us {

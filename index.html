@@ -126,15 +126,14 @@
     <section id="health-tech">
     <div>
         <h2>হেলথ টেকনোলজি</h2>
-        <h3>Bach 14</h3>
+        <h3>Student details</h3>
+<h3 id="bach14-header">Bach 14</h3>
 
-    </div>
-<div>
-
-</div>
-<h3>মোট শিক্ষার্থীঃ ১৯ জন</h3>
-<div>
+<div id="bach14-content" style="display: none;">
+  <h3>মোট শিক্ষার্থীঃ ১৯ জন</h3>
+  <div>
     <table class="table-seba">
+      <!-- Your existing table content -->
         <thead>
             <tr>
                 <th>Serial No.</th>
@@ -259,11 +258,14 @@
                 <td>01786448420</td>
             </tr>
         </tbody>
+       </div>
+       </div>
     </table>
 </section>
 
 
 </div>
+<section id="contact">
 
 <!-- Contact Info Section -->
     <footer>
@@ -294,6 +296,7 @@
             <p>Dhaka Shishu Hospital all rights reserved © 2015 | developed & maintained by <a href="#">Go Up</a></p>
         </div>
     </footer>
+    </section>
 
 <script>
     const hoverSound = document.getElementById('hoverSound');
@@ -305,6 +308,16 @@
             hoverSound.play();           // Play the sound
         });
     });
+    
+document.getElementById('bach14-header').addEventListener('click', function() {
+  var content = document.getElementById('bach14-content');
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+});
+
 </script>
 </body>
 </html>
