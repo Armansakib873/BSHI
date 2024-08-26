@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+    
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <audio id="hoverSound" src="hv3.mp3" preload="auto"></audio>
+    <div class="header">
+<!-- Make the logo and heading separate clickable links, both linking to the "About" section -->
+<div style="display: flex; align-items: center;">
+  <a href="#" style="text-decoration: none;">
+    <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
+  </a>
+  <a href="#" style="text-decoration: none; margin-left: 10px;">
+    <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+  </a>
+</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Courses</a></li>
+                <li><a href="#health-tech">Health Technology</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+      <h2 style="margin-top: 100px">আমাদের কোর্সসমুহ</h2>
+
+    <div>
+      <p>
+        প্রতিষ্ঠানটিতে স্নাতকোত্তর পর্যায়ের বিভিন্ন ডিগ্রি কোর্স চালু আছে। এগুলো হল: দেড় বছর মেয়াদী এফ.সি.পি.এস (ফেলো অব দি কলেজ অব ফিজিশিয়ানস অ্যান্ড সার্জনস), তিন বছর মেয়াদী এম.ডি (ডক্টর অব মেডিসিন), তিন বছর মেয়াদী এম.এস (মাস্টার ইন সার্জারি), ডি.সি.এইচ (ডিপ্লোমা ইন চাইল্ড হেলথ), পেডিয়াট্রিক্সে বিভিন্ন সার্টিফিকেট কোর্স এবং স্বাস্থ্য প্রযুক্তিতে বিএসসি। ইনস্টিটিউটটি বিভিন্ন উপ-বিশেষায়িত কোর্স পরিচালনা করে। এগুলো হল: এফ.সি.পি.এস (নিউওনাটোলজি), এফ.সি.পি.এস (হ্যামেটো-অ্যানকোলজি), এফ.সি.পি.এস (নেফ্রোলজি), এম.ডি (নিউওনাটোলজি), এম.ডি (হেমাটো-অ্যানকোলজি) এবং এম.ডি (নেফ্রোলজি)। ২০০৬ সালে প্রতিষ্ঠানটিতে বেসিক সায়েন্স বিভাগের যাত্রা শুরু হয়। এই বিভাগ শীঘ্রই ডিপ্লোমা ইন ক্লিনিক্যাল প্যাথলজি ও ডিপ্লোমা ইন পেডিয়াট্রিক নার্সিং কোর্স দুটি চালু করতে যাচ্ছে
+      </p>
+        
+        
+        <h3>Undergraduate & Diploma Courses of BICH</h3>
+    </div>
+
+  
+    <div>
+        <table class="table-seba">
+            <thead>
+                <tr>
+                    <th>Institution</th>
+                    <th>Courses</th>
+                    <th>Starting Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bangabandhu Sheikh Mujib Medical University</td>
+                    <td>DCH (Diploma in Child Health)</td>
+                    <td>2011</td>
+                </tr>
+                <tr>
+                    <td>Dhaka University</td>
+                    <td>B.Sc. in Health Technology</td>
+                    <td>2009</td>
+                </tr>
+
+                <tr>
+                    <td>Bangladesh Nursing Council</td>
+                    <td>Diploma in Paediatric Nursing</td>
+                    <td>2012</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+<section id="contact">
+
+<!-- Contact Info Section -->
+    <footer>
+        <div class="contact-info">
+            <h2>Contact Info</h2>
+            <p><strong>Dhaka Shishu (Children) Hospital</strong></p>
+            <p>Sher-e-Bangla Nagar, Dhaka-1207, Bangladesh</p>
+            <p>Phone: 880-2-9128308</p>
+            <p>(PABX): 9104211 - 9104220, 9117512</p>
+            <p>Email: <a href="mailto:dhakashishu2010@gmail.com">dhakashishu2010@gmail.com</a></p>
+            <p>Website: <a href="http://www.dhakashishuhospital.org">www.dhakashishuhospital.org</a></p>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="contact-us">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Footer Developer Info -->
+        <div class="footer-info">
+            <p>Dhaka Shishu Hospital all rights reserved © 2015 | developed & maintained by <a href="#">Go Up</a></p>
+        </div>
+    </footer>
+    </section>
+
+<script>
+    const hoverSound = document.getElementById('hoverSound');
+    
+    document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
+        row.addEventListener('mouseenter', function() {
+            hoverSound.pause();          // Ensure any current playback is stopped
+            hoverSound.currentTime = 0;  // Reset the audio to the beginning
+            hoverSound.play();           // Play the sound
+        });
+    });
+    
+document.getElementById('bach14-header').addEventListener('click', function() {
+  var content = document.getElementById('bach14-content');
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+});
+
+</script>
+</body>
+</html>
