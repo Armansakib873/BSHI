@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <base href="index.html">
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <audio id="hoverSound" src="hv3.mp3" preload="auto"></audio>
+    <div class="header">
+<!-- Make the logo and heading separate clickable links, both linking to the "About" section -->
+<div style="display: flex; align-items: center;">
+  <a href="index.html" style="text-decoration: none;">
+    <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
+  </a>
+  <a href="index.html" style="text-decoration: none; margin-left: 5px;">
+    <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+  </a>
+</div>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="healthtech.html">Health Technology</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </div>
+    
+
+<!-- Contact Info Section -->
+    <footer>
+        <div class="contact-info">
+            <h2 id="top" style="margin-top: 100px">Contact Info</h2>
+            <p><strong>Dhaka Shishu (Children) Hospital</strong></p>
+            <p>Sher-e-Bangla Nagar, Dhaka-1207, Bangladesh</p>
+            <p>Phone: 880-2-9128308</p>
+            <p>(PABX): 9104211 - 9104220, 9117512</p>
+            <p>Email: <a href="mailto:dhakashishu2010@gmail.com">dhakashishu2010@gmail.com</a></p>
+            <p>Website: <a href="http://www.dhakashishuhospital.org">www.dhakashishuhospital.org</a></p>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="contact-us">
+            <h2 style="margin-top: 100px">Contact Us</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Type your message..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Footer Developer Info -->
+
+        <div class="footer-info">
+            <nav id="foot-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="healthtech.html">Health Technology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <p>Dhaka Shishu Hospital all rights reserved © 2015 | developed & maintained by <a href="#top">Home</a></p>
+        </div>
+    </footer>
+    <script>
+ 
+        // Check if the current page is not the index.html
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    window.location.replace('index.html');
+}
+
+    </script>
+    
+    
+</body>
+</html>
