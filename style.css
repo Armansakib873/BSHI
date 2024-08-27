@@ -4,11 +4,13 @@
     align-items: center;
     justify-content: space-between;
     background-image: url('bg2.jpg');
-    background-color: #ffffff;
-    padding: 15px 20px;
-    margin: 0;
+ 
+    padding: 1px 2px;
+    margin-top: 0;
+    margin-bottom: 5px;
     width: 95%;
     max-width: 95%;
+    height: 80px;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
     position: fixed;
     top: 0;
@@ -21,7 +23,8 @@
     width: 35px;
     max-height: 35px;
     margin-right: 5px;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -35,7 +38,7 @@
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     color: #333;
-    margin: 0px;
+    margin-top: 5px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -65,11 +68,13 @@ nav ul {
     display: flex;
     list-style: none;
     font-size: 15px;
-    margin-right: 20px;
+    margin-right: 100px;
+    margin-top: 0px;
 }
 
 nav ul li {
-    margin-left: 18px;
+    margin-left: 10px;
+    padding-top: 0px;
 }
 
 nav ul li a {
@@ -78,8 +83,13 @@ nav ul li a {
     transition: all 0.3s ease;
     position: relative;
     text-align: center;
+    margin-top: 0px;
 }
 
+#main-menu li {
+    display: inline-block; /* Arrange list items horizontally */
+    margin-right: 15px;    /* Space between each list item */
+  }
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -131,6 +141,21 @@ h2 {
     margin: 0 auto;
     margin-bottom: 100px;
 }
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .table-seba {
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        display: block;   /* Ensure the table is treated as a block-level element */
+        margin: 0 30px;   /* Optional: Add some margin to ensure the table doesn't touch the edges */
+    }
+
+    .table-seba {
+        width: 100%; /* Ensure the table takes up 100% of the container width */
+        border-spacing: 0; /* Adjust spacing for mobile if necessary */
+    }
+}
+
 
 .table-seba thead {
     background-color: #3b7b76;
@@ -256,8 +281,9 @@ footer {
 }
 
 .contact-info a, .footer-info a {
-    color: #FFA500;
+    color: #f19b11de;
     text-decoration: none;
+    text-align: center;
 }
 
 .contact-info a:hover, .footer-info a:hover {
@@ -276,6 +302,7 @@ footer {
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #444;
+    border-radius: 15px;
     background-color: #333;
     color: #fff;
 }
@@ -284,6 +311,7 @@ footer {
   
     background-color: #FFA500;
     padding: 10px;
+    border-radius: 15px;
     margin: 5px 0;
     width: 106%;
     border: none;
@@ -293,7 +321,7 @@ footer {
 }
 
 .contact-us button:hover {
-    background-color: #e69500;
+    background-color: #f7b80c;
 }
 
 /* HTML and Body */
@@ -341,7 +369,7 @@ footer {
     padding: 10px 0;
     justify-content: end;
     z-index: 1000; /* Ensures the footer stays above other elements */
-}
+
 */
 
 .footer-info {
@@ -369,4 +397,9 @@ footer {
 
 .footer-info a:hover {
     text-decoration: none;
+    text-align: center;
+}
+
+#bottom-menu{
+    justify-content: center;
 }
