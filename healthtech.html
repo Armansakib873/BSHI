@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BSHI</title>
     <script src="scripts.js" defer></script>
+        <!-- bootstrap css  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -49,7 +52,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr  tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Information" data-bs-content="image ">
                 <td>1</td>
                 <td>Omme Habiba Keya</td>
                 <td>B+</td>
@@ -103,7 +106,7 @@
                 <td>B+</td>
                 <td>01799476758</td>
             </tr>
-            <tr>
+            <tr tabindex="0" role="button" data-bs-toggle="popover" data-bs-html="true" data-bs-title="Information" data-bs-content='<img src="sishulogo.png" alt="Image" style="width: 60px; height: auto;" class="img-fluid">'>
                 <td>10</td>
                 <td>Md. Arman Hossen</td>
                 <td>B+</td>
@@ -218,6 +221,15 @@ document.getElementById('bach14-header').addEventListener('click', function() {
 
 
     </script>
+    <!-- bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</script>
+
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </SCRipt>
 
     </body>
     </html>

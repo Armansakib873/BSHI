@@ -233,6 +233,10 @@ h2 {
     text-align: left;
     width: 100%;
 }
+.img-fluid{
+    width: 100px;
+    height: 100px;
+}
 
 /* Table Padding */
 table {
