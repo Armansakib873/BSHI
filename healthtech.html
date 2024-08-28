@@ -8,32 +8,62 @@
         <!-- bootstrap css  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
     <audio id="hoverSound" src="hv3.mp3" preload="auto"></audio>
-    <div class="header">
-<!-- Make the logo and heading separate clickable links, both linking to the "About" section -->
-<div style="display: flex; align-items: center;">
-  <a href="index.html" style="text-decoration: none;">
-    <img src="sishulogo.png" alt="LOGO" style="height: 50px;">
-  </a>
-  <a href="index.html" style="text-decoration: none; margin-left: 5px;">
-    <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
-  </a>
-</div>
-<nav>
-    <ul id="main-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="courses.html">Courses</a></li>
-    <li><a href="healthtech.html">Health Tech</a></li>
-      <li><a href="contact.html">Contact</a></li>
-  </ul>
-  </nav>
 
-    </div>
-        <h2 id="top" style="margin-top: 135px">হেলথ টেকনোলজি</h2>
+    <div class="container-fluid header">
+      <div class="row">            
+          <div class=" col-md-7 i">
+              <!-- logo -->
+              <a href="index.html">
+                  <img src="sishulogo.png" alt="LOGO">
+                </a>
+
+                <!-- logo h1 -->
+                <a style="text-decoration: none;" href="index.html">
+                  <h1>বাংলাদেশ শিশু হাসপাতাল ও ইন্সিটিউট</h1>
+                </a>      
+                </div>
+    
+    
+      <div class="col-md-5 ii">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a style="border-bottom: 1px solid #045bbd; color: #045bbd;" href="healthtech.html">Health Tech</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+          </nav>
+        </div>
+        
+          </div>
+      </div>
+<!-- space  -->
+
+<div class="container space">
+<div class="row">
+  <div class=" col-md-6 iii">
+    <!-- space for pc view-->
+<h1>.</h1>
+      </div>
+
+      <div class=" col-md-6 iv">
+        <!-- space  for mobile view-->
+    <h1>.</h1>
+          </div>
+  
+
+</div>
+</div>
+
+<!-- content start here -->
+
+
+        <h2>হেলথ টেকনোলজি</h2>
 
     <div>
         <h3>Student details</h3>
@@ -106,12 +136,12 @@
                 <td>B+</td>
                 <td>01799476758</td>
             </tr>
-            <tr tabindex="0" role="button" data-bs-toggle="popover" data-bs-html="true" data-bs-title="Information" data-bs-content='<img src="sishulogo.png" alt="Image" style="width: 60px; height: auto;" class="img-fluid">'>
-                <td>10</td>
-                <td>Md. Arman Hossen</td>
-                <td>B+</td>
-                <td>01314636833</td>
-            </tr>
+<tr tabindex="0" role="button" data-bs-toggle="popover" data-bs-html="true" data-bs-title="Information" data-bs-content='<img src="sishulogo.png" alt="Image" style="width: 150px; height: auto;" class="img-fluid">'>
+    <td>10</td>
+    <td>Md. Arman Hossen</td>
+    <td>B+</td>
+    <td>01314636833</td>
+</tr>
             <tr>
                 <td>11</td>
                 <td>Md. Rahat Hossain</td>
@@ -174,20 +204,26 @@
    
 </div>
 
-<!-- Footer Info Section -->
-<footer>
+   <!-- Footer Section -->
+   <footer>
     <!-- Footer Developer Info -->
-    <div class="footer-info">
-        <nav>
-            <ul id="bottom-menu">
-                <li><a href="index.html">Home</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="healthtech.html" id="health-tech-link">Health <br> Technology</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-          </nav>
-              
-        <p>Dhaka Shishu Hospital all rights reserved © 2015 | developed & maintained by <a href="#top">Go Up</a></p>
+    <div class="container-fluid footer con">
+        <div class="row">            
+            <div class="col-md-12 if">
+                <!-- Footer Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a style="border-bottom: 1px solid #045bbd; color: #045bbd;" href="healthtech.html">Health Tech</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-12 iif">
+                <p>Dhaka Shishu Hospital all rights reserved © 2024 | developed & maintained by <a href="https://www.facebook.com/arman.hossen.503092?mibextid=ZbWKwL">Md. Arman Hossain</a> 14th Batch</p>
+            </div>
+        </div>
     </div>
 </footer>
 
