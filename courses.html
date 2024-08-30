@@ -129,19 +129,19 @@
 </footer>
             <script>
                 // hoverSound 
-                const hoverSound = document.getElementById('hoverSound');
+  //              const hoverSound = document.getElementById('hoverSound');
         
-        if (hoverSound) {
-            document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
-                row.addEventListener('mouseenter', function() {
-                    hoverSound.pause();          // Ensure any current playback is stopped
+  //      if (hoverSound) {
+  //          document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
+   //             row.addEventListener('mouseenter', function() {
+   //                 hoverSound.pause();          // Ensure any current playback is stopped
                     hoverSound.currentTime = 0;  // Reset the audio to the beginning
-                    hoverSound.play();           // Play the sound
-                });
-            });
-        } else {
-            console.error("hoverSound element not found!");
-        }
+   //                 hoverSound.play();           // Play the sound
+   //             });
+  //          });
+  ///      } else {
+    //        console.error("hoverSound element not found!");
+   //     }
 
         </script>
 

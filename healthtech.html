@@ -209,19 +209,19 @@
 
     <script>
         // hoverSound 
-        const hoverSound = document.getElementById('hoverSound');
+        //const hoverSound = document.getElementById('hoverSound');
 
-if (hoverSound) {
-    document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
-        row.addEventListener('mouseenter', function() {
-            hoverSound.pause();          // Ensure any current playback is stopped
-            hoverSound.currentTime = 0;  // Reset the audio to the beginning
-            hoverSound.play();           // Play the sound
-        });
-    });
-} else {
-    console.error("hoverSound element not found!");
-}
+// if (hoverSound) {
+ //   document.querySelectorAll('.table-seba tbody tr').forEach(function(row) {
+  //      row.addEventListener('mouseenter', function() {
+   //         hoverSound.pause();          // Ensure any current playback is stopped
+   //         hoverSound.currentTime = 0;  // Reset the audio to the beginning
+   //         hoverSound.play();           // Play the sound
+  //      });
+ //   });
+//} else {
+  //  console.error("hoverSound element not found!");
+//}
 
 // batch student details hide and show 
 document.getElementById('bach14-header').addEventListener('click', function() {
