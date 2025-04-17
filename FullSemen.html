@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprehensive Semen Analysis Report</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px; /* Slightly narrower for better A4 fit */
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #3498db;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin: 0;
+      font-size: 1.6rem; /* Slightly smaller */
+    }
+
+    h2 {
+      color: #3498db;
+      font-size: 1.3rem; /* Slightly smaller */
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .form-section {
+      margin-bottom: 1.5rem; /* Reduced margin */
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -8px; /* Reduced margin */
+    }
+
+    .form-group {
+      flex: 1 0 200px; /* Adjust basis */
+      padding: 0 8px; /* Reduced padding */
+      margin-bottom: 0.8rem; /* Reduced margin */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem; /* Reduced margin */
+      font-weight: 500;
+      color: #2c3e50;
+      font-size: 0.9rem; /* Slightly smaller */
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem; /* Reduced padding */
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem; /* Slightly smaller */
+      box-sizing: border-box; /* Include padding in width */
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem; /* Reduced padding */
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem; /* Slightly smaller */
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .report {
+      margin-top: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: white;
+      display: none; /* Hidden by default */
+      font-size: 10pt; /* Base font size for report */
+    }
+
+    .report-header {
+      background-color: #3498db;
+      color: white;
+      padding: 0.8rem 1rem; /* Reduced padding */
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .report-title {
+      margin: 0;
+      font-size: 1.3rem; /* Slightly smaller */
+    }
+
+    .report-content {
+      padding: 1rem; /* Reduced padding */
+    }
+
+    .patient-info {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem; /* Reduced margin */
+      padding-bottom: 0.8rem; /* Reduced padding */
+      border-bottom: 1px solid #eee;
+      font-size: 9pt; /* Smaller font for patient info */
+    }
+
+    .patient-info div {
+      flex: 1;
+      min-width: 180px; /* Adjust as needed */
+      margin-bottom: 0.4rem; /* Reduced margin */
+    }
+     .patient-info strong {
+        display: inline-block;
+        width: 110px; /* Align labels */
+     }
+
+    .result-section {
+      margin-bottom: 1rem; /* Reduced margin */
+    }
+    .result-section h4 {
+        font-size: 1.1rem;
+        color: #3498db;
+        margin-bottom: 0.5rem;
+    }
+
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem; /* Reduced margin */
+      font-size: 9pt; /* Smaller font for tables */
+    }
+
+    .result-table th, .result-table td {
+      padding: 0.4rem; /* Reduced padding */
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .result-table th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+    }
+
+    .normal { color: #27ae60; }
+    .abnormal { color: #e74c3c; }
+    .borderline { color: #f39c12; }
+
+    .interpretation {
+      margin-top: 1rem; /* Reduced margin */
+      padding: 0.8rem; /* Reduced padding */
+      background-color: #f8f9fa;
+      border-left: 4px solid #3498db;
+      border-radius: 4px;
+      font-size: 9pt; /* Smaller font */
+    }
+    .interpretation h4 {
+        font-size: 1.1rem;
+        color: #3498db;
+        margin-bottom: 0.5rem;
+    }
+    .interpretation p {
+        margin: 0.3rem 0;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #27ae60;
+      color: white;
+      padding: 0.7rem 1.5rem; /* Reduced padding */
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      margin-top: 1rem; /* Reduced margin */
+      font-size: 0.9rem; /* Slightly smaller */
+    }
+
+    .download-btn:hover {
+      background-color: #219653;
+    }
+
+    .lab-footer {
+      margin-top: 1.5rem; /* Reduced margin */
+      padding-top: 0.8rem; /* Reduced padding */
+      border-top: 1px solid #eee;
+      font-size: 8pt; /* Smaller font */
+      color: #7f8c8d;
+    }
+    .lab-footer p {
+        margin: 0.2rem 0;
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .header, .form-section, #semenForm, .btn-container:not(.report .btn-container) {
+        display: none; /* Hide form in print */
+      }
+      .report {
+        display: block !important;
+        position: static;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 10mm; /* Add margins for printing */
+        font-size: 9pt; /* Adjust base print font size */
+        page-break-inside: avoid; /* Try to keep report on one page */
+      }
+       .report-content {
+           padding: 0;
+       }
+       .report-header {
+           padding: 0.5rem;
+           border-radius: 0; /* Remove radius for print */
+       }
+       .report-title {
+           font-size: 1.2rem;
+       }
+       .patient-info { font-size: 8pt; }
+       .result-table { font-size: 8pt; }
+       .result-table th, .result-table td { padding: 3px; }
+       .interpretation { font-size: 8pt; padding: 0.5rem; }
+       .lab-footer { font-size: 7pt; padding-top: 0.5rem; }
+       .report .btn-container {
+         display: none; /* Hide buttons in print */
+       }
+       @page {
+          size: A4;
+          margin: 15mm; /* Adjust margins as needed */
+       }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Comprehensive Semen Analysis Report Generator</h1>
+    <p>For clinical and laboratory use</p>
+  </div>
+
+  <form id="semenForm">
+    <div class="form-section">
+      <h2>Patient Information</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Patient Name:</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" min="18" max="100" required>
+        </div>
+        <div class="form-group">
+          <label for="patientId">Patient ID:</label>
+          <input type="text" id="patientId">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="referringDoctor">Referring Doctor:</label>
+          <input type="text" id="referringDoctor">
+        </div>
+        <div class="form-group">
+          <label for="sampleDate">Sample Collection Date:</label>
+          <input type="date" id="sampleDate" required>
+        </div>
+        <div class="form-group">
+          <label for="reportDate">Report Date:</label>
+          <input type="date" id="reportDate" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Physical Findings</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="abstinenceDuration">Duration of Abstinence (days):</label>
+          <input type="number" id="abstinenceDuration" min="0" max="30" step="0.5" required>
+        </div>
+        <div class="form-group">
+          <label for="ejaculationInterval">Ejaculation - Analysis Interval (mins):</label>
+          <input type="number" id="ejaculationInterval" min="0" max="120" required>
+        </div>
+        <div class="form-group">
+          <label for="liquefactionTime">Liquefaction Time (mins):</label>
+          <input type="number" id="liquefactionTime" min="0" max="120" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="appearance">Appearance:</label>
+          <select id="appearance" required>
+            <option value="Milky">Milky</option>
+            <option value="Grayish">Grayish</option>
+            <option value="Yellowish">Yellowish</option>
+            <option value="Clear">Clear</option>
+            <option value="Bloody">Bloody</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="viscosity">Viscosity (cm):</label>
+          <input type="number" id="viscosity" min="0" max="5" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="volume">Volume (mL):</label>
+          <input type="number" id="volume" min="0" max="10" step="0.1" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ph">pH:</label>
+          <input type="number" id="ph" min="6.0" max="9.0" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="odor">Odor:</label>
+          <select id="odor" required>
+            <option value="Normal">Normal</option>
+            <option value="Abnormal">Abnormal</option>
+          </select>
+        </div>
+        <div class="form-group">
+           <label for="agglutination">Agglutination:</label>
+           <select id="agglutination" required>
+            <option value="None">None</option>
+            <option value="Mild">Mild</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Severe">Severe</option>
+           </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Microscopic Findings</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tsc">Total Sperm Conc. (million/mL):</label>
+          <input type="number" id="tsc" min="0" max="500" step="0.1" required>
+        </div>
+        <div class="form-group">
+          <label for="motility">Progressive Motility (%):</label>
+          <input type="number" id="motility" min="0" max="100" step="0.1" required>
+        </div>
+         <div class="form-group">
+          <label for="morphology">Normal Morphology (%):</label>
+          <input type="number" id="morphology" min="0" max="100" step="0.1" required>
+        </div>
+      </div>
+       <div class="form-row">
+         <div class="form-group">
+          <label for="vitality">Vitality (% living):</label>
+          <input type="number" id="vitality" min="0" max="100" step="0.1" required>
+        </div>
+         <div class="form-group">
+          <label for="mscInput">Motile Sperm Conc. (MSC) (M/mL):</label>
+          <input type="number" id="mscInput" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="tfscInput">Total Functional Sperm Conc. (TFSC) (M/mL):</label>
+          <input type="number" id="tfscInput" min="0" step="0.01" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pus">Pus Cells (/HPF):</label>
+          <input type="number" id="pus" min="0" max="100" step="0.1" required> <!-- Increased max -->
+        </div>
+        <div class="form-group">
+          <label for="rbc">RBC (/HPF):</label>
+          <input type="number" id="rbc" min="0" max="100" step="0.1" required> <!-- Increased max -->
+        </div>
+         <div class="form-group">
+           <!-- Placeholder for alignment if needed -->
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Additional Notes</h2>
+      <div class="form-row">
+        <div class="form-group" style="flex: 1 0 100%;">
+          <label for="additionalNotes">Notes:</label>
+          <textarea id="additionalNotes" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button type="submit">Generate Report</button>
+    </div>
+  </form>
+
+  <div class="report" id="report">
+    <div class="report-header">
+      <h3 class="report-title">Semen Analysis Laboratory Report</h3>
+      <span id="reportIdDisplay"></span>
+    </div>
+
+    <div class="report-content">
+      <div class="patient-info">
+        <div>
+          <strong>Patient Name:</strong> <span id="r_name"></span><br>
+          <strong>Patient ID:</strong> <span id="r_patientId"></span><br>
+          <strong>Age:</strong> <span id="r_age"></span>
+        </div>
+        <div>
+          <strong>Referring Doctor:</strong> <span id="r_referringDoctor"></span><br>
+          <strong>Sample Date:</strong> <span id="r_sampleDate"></span><br>
+          <strong>Report Date:</strong> <span id="r_reportDate"></span>
+        </div>
+      </div>
+
+      <div class="result-section">
+        <h4>Physical Findings</h4>
+        <table class="result-table">
+          <thead>
+          <tr>
+            <th width="35%">Parameter</th>
+            <th width="20%">Result</th>
+            <th width="30%">Reference Range</th>
+            <th width="15%">Interpretation</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Duration of Abstinence</td>
+            <td id="r_abstinenceDuration"></td>
+            <td>2–7 days</td>
+            <td id="i_abstinenceDuration"></td>
+          </tr>
+          <tr>
+            <td>Ejaculation - Analysis Interval</td>
+            <td id="r_ejaculationInterval"></td>
+            <td><60 minutes</td>
+            <td id="i_ejaculationInterval"></td>
+          </tr>
+          <tr>
+            <td>Liquefaction Time</td>
+            <td id="r_liquefactionTime"></td>
+            <td><60 minutes</td> <!-- WHO 2010 uses <60 -->
+            <td id="i_liquefactionTime"></td>
+          </tr>
+          <tr>
+            <td>Appearance</td>
+            <td id="r_appearance"></td>
+            <td>Homogeneous, gray-opalescent</td>
+            <td id="i_appearance"></td>
+          </tr>
+          <tr>
+            <td>Viscosity</td>
+            <td id="r_viscosity"></td>
+            <td>Discrete drops (<2 cm thread)</td>
+            <td id="i_viscosity"></td>
+          </tr>
+          <tr>
+            <td>Volume</td>
+            <td id="r_volume"></td>
+            <td>≥1.5 mL</td>
+            <td id="i_volume"></td>
+          </tr>
+           <tr>
+            <td>pH</td>
+            <td id="r_ph"></td>
+            <td>≥7.2</td>
+            <td id="i_ph"></td>
+          </tr>
+          <tr>
+            <td>Odor</td>
+            <td id="r_odor"></td>
+            <td>Normal (Characteristic)</td>
+            <td id="i_odor"></td>
+          </tr>
+          <tr>
+             <td>Agglutination</td>
+             <td id="r_agglutination"></td>
+             <td>None / <10% motile sperm</td>
+             <td id="i_agglutination"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="result-section">
+        <h4>Microscopic Findings</h4>
+        <table class="result-table">
+           <thead>
+             <tr>
+               <th width="35%">Parameter</th>
+               <th width="20%">Result</th>
+               <th width="30%">Reference Range</th>
+               <th width="15%">Interpretation</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>Total Sperm Concentration</td>
+               <td id="r_tsc"></td>
+               <td>≥15 million/mL</td>
+               <td id="i_tsc"></td>
+             </tr>
+             <tr>
+               <td>Progressive Motility (PR)</td>
+               <td id="r_motility"></td>
+               <td>≥32%</td>
+               <td id="i_motility"></td>
+             </tr>
+             <tr>
+               <td>Normal Morphology</td>
+               <td id="r_morphology"></td>
+               <td>≥4%</td>
+               <td id="i_morphology"></td>
+             </tr>
+             <tr>
+               <td>Vitality</td>
+               <td id="r_vitality"></td>
+               <td>≥58%</td>
+               <td id="i_vitality"></td>
+             </tr>
+             <tr>
+                <td>Motile Sperm Conc. (MSC)*</td>
+                <td id="r_msc"></td>
+                <td>N/A (Calculated)</td> <!-- No standard range for PR-only MSC -->
+                <td id="i_msc"></td>
+             </tr>
+             <tr>
+                <td>Total Functional Sperm Conc. (TFSC)</td>
+                <td id="r_tfsc"></td>
+                <td>N/A (Calculated)</td> <!-- No standard range -->
+                <td id="i_tfsc"></td>
+             </tr>
+             <tr>
+               <td>Pus Cells (Peroxidase +ve)</td>
+               <td id="r_pus"></td>
+               <td><1 million/mL (~<5 /HPF)</td>
+               <td id="i_pus"></td>
+             </tr>
+             <tr>
+               <td>RBC</td>
+               <td id="r_rbc"></td>
+               <td><2 /HPF</td>
+               <td id="i_rbc"></td>
+             </tr>
+              <tr>
+               <td>Total Sperm Count</td>
+               <td id="r_totalCount"></td>
+               <td>≥39 million</td>
+               <td id="i_totalCount"></td>
+             </tr>
+           </tbody>
+        </table>
+         <p style="font-size: 8pt; margin-top: 5px;">*MSC calculated using Progressive Motility only (TSC * PR / 100).</p>
+      </div>
+
+      <div class="interpretation">
+        <h4>Summary and Interpretation</h4>
+        <p id="r_interpretation"></p>
+        <p><strong>Comment:</strong> <span id="r_comment"></span></p>
+        <p><strong>Suggestions:</strong> <span id="r_recommendation"></span></p>
+      </div>
+
+      <div class="lab-footer">
+        <p><strong>Additional Notes:</strong> <span id="r_additionalNotes"></span></p>
+        <p>Test performed based on WHO Laboratory Manual for the Examination and Processing of Human Semen (5th Edition, 2010) guidelines.</p>
+        <p><strong>Laboratory Director / Technologist:</strong> _____________________     <strong>Date Verified:</strong> ___________________</p>
+      </div>
+
+      <div class="btn-container">
+        <button id="downloadBtn" class="download-btn">Download Report as JPG</button>
+        <button id="printBtn" class="download-btn" style="background-color: #3498db; margin-left: 10px;">Print Report</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+const form = document.getElementById("semenForm");
+const report = document.getElementById("report");
+const downloadBtn = document.getElementById("downloadBtn");
+const printBtn = document.getElementById("printBtn");
+
+// Input fields for calculation
+const tscInput = document.getElementById("tsc");
+const motilityInput = document.getElementById("motility");
+const morphologyInput = document.getElementById("morphology");
+const mscResultInput = document.getElementById("mscInput");
+const tfscResultInput = document.getElementById("tfscInput");
+
+function generateReportId() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  return `SA-${year}${month}${day}-${random}`;
+}
+
+function formatDate(dateString) {
+  if (!dateString) return "-";
+  try {
+      const date = new Date(dateString + 'T00:00:00'); // Ensure date is parsed as local
+      if (isNaN(date.getTime())) return "-"; // Invalid date input
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+  } catch (e) {
+      console.error("Error formatting date:", e);
+      return "-";
+  }
+}
+
+
+function calculateMicroscopicParams() {
+    const tsc = parseFloat(tscInput.value) || 0;
+    const progressiveMotility = parseFloat(motilityInput.value) || 0;
+    const morphology = parseFloat(morphologyInput.value) || 0;
+
+    // Calculate MSC based on Progressive Motility ONLY
+    const msc = (tsc * progressiveMotility / 100);
+    // Calculate TFSC
+    const tfsc = (tsc * progressiveMotility / 100 * morphology / 100);
+
+    // Update the input fields (allowing override)
+    // Check if the element exists before setting value
+    if (mscResultInput) mscResultInput.value = msc.toFixed(2);
+    if (tfscResultInput) tfscResultInput.value = tfsc.toFixed(2);
+}
+
+// Add event listeners for instant calculation
+if (tscInput) tscInput.addEventListener('input', calculateMicroscopicParams);
+if (motilityInput) motilityInput.addEventListener('input', calculateMicroscopicParams);
+if (morphologyInput) morphologyInput.addEventListener('input', calculateMicroscopicParams);
+
+
+function getInterpretation(value, reference, type) {
+  let interpretation = "";
+  let cssClass = "normal"; // Default to normal
+
+  // Ensure value is a number where numerical comparison is needed
+  const numValue = typeof value === 'string' ? parseFloat(value) : value;
+
+  switch(type) {
+    case "abstinence":
+      if (numValue >= 2 && numValue <= 7) interpretation = "Normal";
+      else if (numValue < 2) { interpretation = "Short"; cssClass = "abnormal"; }
+      else { interpretation = "Extended"; cssClass = "borderline"; }
+      break;
+
+    case "ejaculationInterval":
+      if (numValue <= 60) interpretation = "Acceptable";
+      else { interpretation = "Delayed"; cssClass = "abnormal"; }
+      break;
+
+    case "liquefaction":
+      if (numValue < 60) interpretation = "Normal"; // WHO 2010: Normal if < 60 mins
+      else { interpretation = "Delayed"; cssClass = "abnormal"; }
+      break;
+
+    case "appearance":
+      if (value === "Milky" || value === "Grayish") interpretation = "Normal";
+      else { interpretation = "Abnormal"; cssClass = "abnormal"; }
+      break;
+
+    case "viscosity": // Interpretation based on observation rather than exact cm length per WHO 2010
+       if (numValue <= 2) interpretation = "Normal"; // Assuming <=2cm corresponds to discrete drops
+       else { interpretation = "Increased"; cssClass = "abnormal"; }
+       break;
+
+    case "volume":
+      if (numValue >= 1.5) interpretation = "Normal";
+      else { interpretation = "Low (Hypospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "ph":
+      if (numValue >= 7.2) interpretation = "Normal"; // WHO 2010 lower limit only
+      else { interpretation = "Low"; cssClass = "abnormal"; }
+      break;
+
+    case "spermCount":
+      if (numValue >= 15) interpretation = "Normal";
+      else if (numValue === 0) { interpretation = "Azoospermia"; cssClass = "abnormal";}
+      else { interpretation = "Low (Oligozoospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "motility": // Progressive Motility
+      if (numValue >= 32) interpretation = "Normal";
+      else { interpretation = "Low (Asthenozoospermia)"; cssClass = "abnormal"; }
+      break;
+
+    // No interpretation needed for calculated MSC/TFSC directly against standard ranges
+    // as they are calculated/potentially edited and standard ranges may not apply directly
+    case "msc":
+    case "tfsc":
+      interpretation = "-"; // Indicate calculated value
+      cssClass = "";
+      break;
+
+    case "morphology":
+      if (numValue >= 4) interpretation = "Normal";
+      else { interpretation = "Low (Teratozoospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "vitality":
+      if (numValue >= 58) interpretation = "Normal";
+      else { interpretation = "Low (Necrozoospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "pus": // Reference is < 1 M/mL, roughly <5/HPF
+      if (numValue < 5) interpretation = "Normal"; // Using HPF for simplicity here
+      else { interpretation = "Elevated (Leukocytospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "rbc":
+      if (numValue < 2) interpretation = "Normal";
+      else { interpretation = "Elevated (Hemospermia)"; cssClass = "abnormal"; }
+      break;
+
+    case "agglutination":
+      if (value === "None" || value === "Mild") interpretation = "Normal";
+      else { interpretation = "Present"; cssClass = "abnormal"; }
+      break;
+
+    case "odor":
+      if (value === "Normal") interpretation = "Normal";
+      else { interpretation = "Abnormal"; cssClass = "abnormal"; }
+      break;
+
+     case "totalCount":
+       if (numValue >= 39) interpretation = "Normal";
+       else if (numValue === 0) { interpretation = "Azoospermia"; cssClass = "abnormal";}
+       else { interpretation = "Low"; cssClass = "abnormal"; }
+       break;
+
+     default:
+        interpretation = "-";
+        cssClass = "";
+  }
+
+  return { text: interpretation, cssClass: cssClass };
+}
+
+// Updated diagnosis function (removed totalMotility dependency)
+function getDiagnosis(tsc, progressiveMotility, morphology, volume, vitality, pus) {
+  let abnormalities = [];
+
+  // Check for azoospermia first
+  if (tsc === 0) {
+    return { diagnosis: "Azoospermia" };
+  }
+
+  // Check individual parameters based on WHO 2010 Lower Reference Limits
+  if (volume < 1.5) abnormalities.push("Hypospermia");
+  if (tsc < 15) abnormalities.push("Oligozoospermia");
+  if (progressiveMotility < 32) abnormalities.push("Asthenozoospermia");
+  if (morphology < 4) abnormalities.push("Teratozoospermia");
+  if (vitality < 58 && progressiveMotility < 32) { // Check vitality especially if motility is low
+     abnormalities.push("Necrozoospermia");
+  } else if (vitality < 58) {
+      // Optionally report low vitality even if motility is normal, but it's less common term
+      // abnormalities.push("Necrozoospermia");
+  }
+
+  // Use Pus count in million/mL if available, otherwise use HPF. Assume < 1 M/mL ~ <5 /HPF
+  if (pus >= 5) abnormalities.push("Leukocytospermia"); // Using HPF value
+
+  let diagnosis = "";
+  if (abnormalities.length === 0) {
+    diagnosis = "Normozoospermia";
+  } else {
+      // Combine common terms
+      const oligo = abnormalities.includes("Oligozoospermia");
+      const astheno = abnormalities.includes("Asthenozoospermia");
+      const terato = abnormalities.includes("Teratozoospermia");
+      const coreTerms = [];
+
+      if (oligo) coreTerms.push("Oligo");
+      if (astheno) coreTerms.push("Astheno");
+      if (terato) coreTerms.push("Terato");
+
+      if (coreTerms.length > 0) {
+          diagnosis = coreTerms.join("") + "zoospermia";
+      }
+
+      // Add other terms
+      const otherTerms = abnormalities.filter(term => !term.includes("Oligo") && !term.includes("Astheno") && !term.includes("Terato"));
+       if (otherTerms.length > 0) {
+            diagnosis += (diagnosis ? " with " : "") + otherTerms.join(" and ");
+       }
+       // Ensure diagnosis isn't empty if only non-core terms present
+       if (!diagnosis && otherTerms.length > 0) {
+           diagnosis = otherTerms.join(" and ");
+       }
+  }
+
+  return { diagnosis }; // Only return the term now
+}
+
+function getRecommendation(diagnosis, abstinenceDuration) {
+  let recommendations = [];
+
+  if (diagnosis === "Normozoospermia") {
+    recommendations.push("Semen parameters are within WHO (2010) lower reference limits.");
+  } else {
+    recommendations.push("Clinical correlation and further investigation advised based on semen analysis findings.");
+
+    if (diagnosis.includes("Azoospermia")) {
+      recommendations.push("Referral to urologist/fertility specialist strongly recommended for evaluation (hormonal, genetic, imaging).");
+    } else {
+         if (diagnosis.includes("Oligo") || diagnosis.includes("Astheno") || diagnosis.includes("Terato")) {
+            recommendations.push("Repeat semen analysis after 2-3 months recommended to confirm findings. Consider consultation with a fertility specialist.");
+         }
+         if (diagnosis.includes("Leukocytospermia")) {
+            recommendations.push("Evaluate for potential genitourinary infection (e.g., semen culture, clinical exam).");
+         }
+         if (diagnosis.includes("Hypospermia")) {
+             recommendations.push("Evaluate potential causes of low volume (e.g., collection issues, ejaculatory duct obstruction, retrograde ejaculation).");
+         }
+         // General lifestyle advice for sub-optimal results
+         if (diagnosis !== "Normozoospermia") {
+             recommendations.push("Consider lifestyle review: maintain healthy weight, avoid smoking/excessive alcohol, manage stress, avoid testicular overheating.");
+         }
+    }
+  }
+
+  // Comment on abstinence period if outside range
+  if (abstinenceDuration < 2 || abstinenceDuration > 7) {
+    recommendations.push(`Note: Abstinence period (${abstinenceDuration} days) is outside the recommended 2-7 days. Repeat analysis with optimal abstinence may be considered if results are borderline or unexpected.`);
+  }
+
+  return recommendations.join(" ");
+}
+
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // --- Read Data ---
+  // Patient Info
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const patientId = document.getElementById("patientId").value || "-";
+  const referringDoctor = document.getElementById("referringDoctor").value || "-";
+  const sampleDate = document.getElementById("sampleDate").value;
+  const reportDate = document.getElementById("reportDate").value;
+
+  // Physical Findings
+  const abstinenceDuration = parseFloat(document.getElementById("abstinenceDuration").value);
+  const ejaculationInterval = parseFloat(document.getElementById("ejaculationInterval").value);
+  const liquefactionTime = parseFloat(document.getElementById("liquefactionTime").value);
+  const appearance = document.getElementById("appearance").value;
+  const viscosity = parseFloat(document.getElementById("viscosity").value);
+  const volume = parseFloat(document.getElementById("volume").value);
+  const ph = parseFloat(document.getElementById("ph").value);
+  const odor = document.getElementById("odor").value;
+  const agglutination = document.getElementById("agglutination").value;
+
+  // Microscopic Findings (Read final values, including potentially edited MSC/TFSC)
+  const tsc = parseFloat(document.getElementById("tsc").value);
+  const progressiveMotility = parseFloat(document.getElementById("motility").value);
+  const morphology = parseFloat(document.getElementById("morphology").value);
+  const vitality = parseFloat(document.getElementById("vitality").value);
+  const msc = parseFloat(document.getElementById("mscInput").value); // Read final value
+  const tfsc = parseFloat(document.getElementById("tfscInput").value); // Read final value
+  const pus = parseFloat(document.getElementById("pus").value);
+  const rbc = parseFloat(document.getElementById("rbc").value);
+
+  // Additional Notes
+  const additionalNotes = document.getElementById("additionalNotes").value || "None";
+
+  // Derived Parameter (only total count now)
+  const totalCount = (tsc * volume); // Calculate total count
+
+  // --- Generate Report Content ---
+  const reportId = generateReportId();
+  const diagnosticInfo = getDiagnosis(tsc, progressiveMotility, morphology, volume, vitality, pus);
+  const diagnosis = diagnosticInfo.diagnosis;
+  const recommendation = getRecommendation(diagnosis, abstinenceDuration);
+
+  // --- Fill Report Sections ---
+  document.getElementById("reportIdDisplay").textContent = `Report ID: ${reportId}`;
+
+  // Patient info
+  document.getElementById("r_name").textContent = name;
+  document.getElementById("r_age").textContent = age;
+  document.getElementById("r_patientId").textContent = patientId;
+  document.getElementById("r_referringDoctor").textContent = referringDoctor;
+  document.getElementById("r_sampleDate").textContent = formatDate(sampleDate);
+  document.getElementById("r_reportDate").textContent = formatDate(reportDate);
+
+  // Helper to set table cell value and interpretation
+  function setTableCell(valueId, value, interpretationId, interpretationData) {
+     const valueEl = document.getElementById(valueId);
+     const interpEl = document.getElementById(interpretationId);
+     if (valueEl) valueEl.textContent = value;
+     if (interpEl) {
+         interpEl.textContent = interpretationData.text;
+         interpEl.className = interpretationData.cssClass;
+     }
+  }
+
+  // Physical Findings
+  setTableCell("r_abstinenceDuration", `${abstinenceDuration} days`, "i_abstinenceDuration", getInterpretation(abstinenceDuration, "", "abstinence"));
+  setTableCell("r_ejaculationInterval", `${ejaculationInterval} mins`, "i_ejaculationInterval", getInterpretation(ejaculationInterval, "", "ejaculationInterval"));
+  setTableCell("r_liquefactionTime", `${liquefactionTime} mins`, "i_liquefactionTime", getInterpretation(liquefactionTime, "", "liquefaction"));
+  setTableCell("r_appearance", appearance, "i_appearance", getInterpretation(appearance, "", "appearance"));
+  setTableCell("r_viscosity", `${viscosity} cm`, "i_viscosity", getInterpretation(viscosity, "", "viscosity")); // Or qualitative description
+  setTableCell("r_volume", `${volume.toFixed(1)} mL`, "i_volume", getInterpretation(volume, "", "volume"));
+  setTableCell("r_ph", ph.toFixed(1), "i_ph", getInterpretation(ph, "", "ph"));
+  setTableCell("r_odor", odor, "i_odor", getInterpretation(odor, "", "odor"));
+  setTableCell("r_agglutination", agglutination, "i_agglutination", getInterpretation(agglutination, "", "agglutination"));
+
+
+  // Microscopic Findings
+  setTableCell("r_tsc", `${tsc.toFixed(1)} M/mL`, "i_tsc", getInterpretation(tsc, "", "spermCount"));
+  setTableCell("r_motility", `${progressiveMotility.toFixed(1)}%`, "i_motility", getInterpretation(progressiveMotility, "", "motility"));
+  setTableCell("r_morphology", `${morphology.toFixed(1)}%`, "i_morphology", getInterpretation(morphology, "", "morphology"));
+  setTableCell("r_vitality", `${vitality.toFixed(1)}%`, "i_vitality", getInterpretation(vitality, "", "vitality"));
+  setTableCell("r_msc", `${msc.toFixed(2)} M/mL`, "i_msc", getInterpretation(msc, "", "msc"));
+  setTableCell("r_tfsc", `${tfsc.toFixed(2)} M/mL`, "i_tfsc", getInterpretation(tfsc, "", "tfsc"));
+  setTableCell("r_pus", `${pus.toFixed(1)} /HPF`, "i_pus", getInterpretation(pus, "", "pus"));
+  setTableCell("r_rbc", `${rbc.toFixed(1)} /HPF`, "i_rbc", getInterpretation(rbc, "", "rbc"));
+  setTableCell("r_totalCount", `${totalCount.toFixed(1)} Million`, "i_totalCount", getInterpretation(totalCount, "", "totalCount"));
+
+
+  // Interpretation Section
+  document.getElementById("r_interpretation").textContent = `Based on WHO (2010) lower reference limits, the semen analysis shows findings consistent with ${diagnosis}.`;
+  document.getElementById("r_comment").textContent = diagnosis;
+  document.getElementById("r_recommendation").textContent = recommendation;
+  document.getElementById("r_additionalNotes").textContent = additionalNotes;
+
+  // --- Show Report ---
+  report.style.display = "block";
+  report.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+// --- Download and Print ---
+downloadBtn.addEventListener("click", function() {
+    // Temporarily hide the buttons in the original report
+    const btnContainer = report.querySelector('.btn-container');
+    if (btnContainer) {
+        btnContainer.style.display = 'none';
+    }
+
+    html2canvas(report, {
+        scale: 2, // Increase resolution
+        useCORS: true, // Handle cross-origin resources if any
+        logging: false, // Suppress logs
+        backgroundColor: '#ffffff' // Ensure white background
+    }).then(canvas => {
+        // Restore the buttons after capturing
+        if (btnContainer) {
+            btnContainer.style.display = 'block';
+        }
+
+        const link = document.createElement('a');
+        const patientName = document.getElementById("name").value.replace(/\s+/g, '_') || 'Report';
+        link.download = `Semen_Analysis_${patientName}.jpg`;
+        link.href = canvas.toDataURL("image/jpeg", 0.95); // Use JPEG with high quality
+        link.click();
+    }).catch(err => {
+        // Restore the buttons even if an error occurs
+        if (btnContainer) {
+            btnContainer.style.display = 'block';
+        }
+        console.error("Error generating canvas:", err);
+        alert("Error generating report image. Please try again or check the console for details.");
+    });
+});
+
+printBtn.addEventListener("click", function() {
+  window.print();
+});
+
+</script>
+</body>
+</html>
